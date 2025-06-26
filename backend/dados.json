@@ -1,0 +1,46 @@
+{
+  "doadores": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "contato": "joao@gmail.com",
+      "endereco": "Rua A, 123"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Souza",
+      "contato": "maria@hotmail.com",
+      "endereco": "Rua B, 456"
+    }
+  ],
+  "itens": [
+    {
+      "id": 1,
+      "nome": "Cesta Básica",
+      "quantidade": 10,
+      "status": "Disponível",
+      "id_doador": 1
+    },
+    {
+      "id": 2,
+      "nome": "Cobertores",
+      "quantidade": 5,
+      "status": "Reservado",
+      "id_doador": 2
+    }
+  ],
+  "solicitacoes": [
+    {
+      "id": 1,
+      "descricao": "Preciso de alimentos para família de 4 pessoas",
+      "status": "Pendente",
+      "id_beneficiario": 101
+    },
+    {
+      "id": 2,
+      "descricao": "Ajuda com roupas de inverno",
+      "status": "Atendida",
+      "id_beneficiario": 102
+    }
+  ]
+}
