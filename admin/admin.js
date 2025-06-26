@@ -1,4 +1,4 @@
-let lista = [];
+let lista = JSON.parse(localStorage.getItem('doacoes')) || [];
 let modoEdicao = false;
 let idEdicao = null;
 
@@ -11,7 +11,6 @@ document.getElementById('form-item').addEventListener('submit', function(event) 
   const doador = document.getElementById('doador').value;
 
   if (modoEdicao) {
-    // Atualizar item existente
     const item = lista.find(i => i.id === idEdicao);
     item.nome = nome;
     item.quantidade = quantidade;
@@ -20,7 +19,6 @@ document.getElementById('form-item').addEventListener('submit', function(event) 
     modoEdicao = false;
     idEdicao = null;
   } else {
-    // Criar novo item
     const item = {
       id: Date.now(),
       nome,
@@ -31,6 +29,7 @@ document.getElementById('form-item').addEventListener('submit', function(event) 
     lista.push(item);
   }
 
+  localStorage.setItem('doacoes', JSON.stringify(lista));
   this.reset();
   atualizarLista();
 });
@@ -54,6 +53,7 @@ function atualizarLista() {
 
 function removerItem(id) {
   lista = lista.filter(item => item.id !== id);
+  localStorage.setItem('doacoes', JSON.stringify(lista));
   atualizarLista();
 }
 
@@ -66,3 +66,5 @@ function editarItem(id) {
   modoEdicao = true;
   idEdicao = id;
 }
+
+atualizarLista();
