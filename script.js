@@ -1,4 +1,4 @@
-fetch('../backend/dados.json')
+fetch('dados.json')
   .then(response => response.json())
   .then(data => {
     const itens = data.itens;
